@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <style>
+    * {
+        margin: 0; padding: 0;
+    }
+    li{list-style:none;}
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    header{
+        height:60px;
+        background-color:forestgreen;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid #000000;
+        
+        text-align: center;
+    }
+    header > a, header > label{
+        display: block;
+        height: 50px;
+        position: absolute;
+        line-height: 45px;
+        padding: 1px 20px;
+        background-color: dimgray;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    header:first-child a{
+     
+        position: absolute;
+        top: 5px; left: 10px;
+        
+    }
+    header h1{
+        color: white;
+        font-size: 2em;
+        text-align: center;
+        line-height: 60px;
+    }
+    header label{        
+        top: 5px; right: 10px;
+        background-color: dimgray;        
+        color: white;
+    }
+    #toggle{
+        display:none;
+    }
+    #toggle:checked ~ #wrap #gnb{
+        display: block;
+    }
+    #gnb{
+        display:none; border:5px solid #000000;
+    }
+    #gnb{
+        overflow: hidden;
+    }
+    #gnb ul li{
+        width:20%; height:50px;
+        border: 5px dotted #ff0000;
+        box-sizing: border-box;
+        background-color: blueviolet;
+        line-height: 40px;
+        float: left;
+        text-align: center;
+        font-weight: bold;
+    }
+    #gnb ul li a{
+        padding: 5px 10px;
+    }
+    #lnb ul{
+        overflow: hidden;
+    }
+    #lnb ul li{
+        width: 25%; height:60px;
+        border: 1px solid #808080;
+        float: left;
+        box-sizing: border-box;
+        line-height: 60px;
+        text-align: center;
+        font-weight: bold;
+        background-color: aquamarine;
+        font-size: 1.6em;
+    }
+    #lnb ul li a{
+        padding: 1.3em;
+    }
+    </style>
+</head>
+<body>
+    <input id="toggle" type="checkbox" />
+    <div id="wrap">
+        <header>
+            <a class="left" href="#none">category</a>
+            <h1>Mobile</h1>
+            <label class="right" for="toggle" onclick="">menu</label>
+        </header>
+        <div id="gnb">
+            <ul>
+                <li><a href="#none">menu1</a></li>
+                <li><a href="#none">menu2</a></li>
+                <li><a href="#none">menu3</a></li>
+                <li><a href="#none">menu4</a></li>
+                <li><a href="#none">menu5</a></li>
+            </ul>
+        </div>
+        <div id="lnb">
+            <ul>
+                <li><a href="#none">lnb1</a></li>
+                <li><a href="#none">lnb2</a></li>
+                <li><a href="#none">lnb3</a></li>
+                <li><a href="#none">lnb4</a></li>
+            </ul>
+        </div>
+    </div>    
+    
+</body>
+</html>
