@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf -8" />
+    <title>쇼핑몰 연습</title>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dokdo&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: 'MuseoModerno', cursive;
+        }
+
+        header {
+            width: 100%;
+        }
+
+            header li {
+                list-style: none;
+                float: left;
+            }
+
+            header #gnb {
+                background-color: black;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+                header #gnb ul {
+                    width: 1000px;
+                    height: 30px;
+                    line-height: 30px;
+                    overflow: hidden;
+                    margin: 0 auto;
+                }
+
+                    header #gnb ul li {
+                        width: 100px;
+                        text-align: center;
+                    }
+
+                header #gnb a {
+                    color: white;
+                }
+
+            header #logo {
+                width: 300px;
+                height: 150px;
+                border: 1px solid #808080;
+                text-align: center;
+                line-height: 150px;
+                margin: 120px auto 80px;
+            }
+
+            header #hit_menu {
+                overflow: hidden;
+                width: 1000px;
+                margin: 0 auto 3px;
+            }
+
+                header #hit_menu ul li {
+                    float: right;
+                }
+
+                header #hit_menu a {
+                    display: block;
+                    font-size: 1.2em;
+                    text-align: center;
+                    width: 100px;
+                    height: 70px;
+                    line-height: 70px;
+                    border: 1px solid #808080;
+                    box-sizing: border-box;
+                }
+
+                header #hit_menu li:first-child a {
+                    border-radius: 0 10px 10px 0;
+                }
+
+                header #hit_menu li:last-child a {
+                    border-radius: 10px 0 0 10px;
+                }
+
+            header #lnb {
+                width: 100%;
+                height: 50px;
+                border-top: 2px dotted #808080;
+                border-bottom: 2px double #808080;
+            }
+
+                header #lnb ul {
+                    width: 1000px;
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+
+                header #lnb li {
+                    width: 125px;
+                    height: 45px;
+                    line-height: 45px;
+                    text-align: center;
+                    font-size: 1.3em;
+                }
+
+        content #section1 {
+            width: 1000px;
+            height: 500px;
+            border: 1px solid #808080;
+            overflow: hidden;
+            margin: 0 auto;
+            font-family: 'Dokdo', cursive;
+            font-size: 2.0em;
+        }
+
+            content #section1 div {
+                border: 1px solid #808080;
+                box-sizing: border-box;
+                height: 500px;
+                line-height: 500px;
+                text-align: center;
+                float: left;
+            }
+
+            content #section1 .slide {
+                width: 700px;
+            }
+
+            content #section1 .side {
+                width: 300px;
+            }
+
+        content #section2 {
+            width: 1000px;
+            margin: 20px auto;
+        }
+
+            content #section2 li {
+                list-style: none;
+            }
+
+            content #section2 .type1 {
+                overflow: hidden;
+                width: 1000px;
+            }
+
+        #section2 .type1 ul li {
+            float: left;
+            width: 238px;
+            height: 280px;
+            border: 1px solid#808080;
+            line-height: 280px;
+            text-align: center;
+            margin: 0 7px 0 0;
+            box-sizing: border-box;
+        }
+
+        #section2 .type1 ul:first-child li {
+            margin-left: 7px;
+        }
+
+        #section2 .type1 ul:last-child li {
+            margin-right: 3px;
+        }
+
+        content #section2 .type2 {
+            overflow: hidden;
+            width: 1000px;
+            margin: 10px auto;
+        }
+
+        #section2 .type2 ul li {
+            float: left;
+            width: 238px;
+            height: 280px;
+            border: 1px solid#808080;
+            line-height: 280px;
+            text-align: center;
+            margin: 0 7px 0 0;
+            box-sizing: border-box;
+        }
+
+        #section2 .type2 ul:first-child li {
+            margin-left: 7px;
+        }
+
+        #section2 .type2 ul:last-child li {
+            margin-right: 3px;
+        }
+
+        footer {
+            overflow: hidden;
+            margin: 30px auto 0;
+            width: 100%;
+            border-top: 2px solid black;
+            background: #f9ff6f;
+            font-family: 'Dokdo', cursive;
+            font-size: 2.0em;
+        }
+
+            footer #footer {
+                margin: 0 auto;
+                width: 1000px;
+            }
+
+                footer #footer div {
+                    border: 1px solid #808080;
+                    box-sizing: border-box;
+                    text-align: center;
+                    font-weight: bold;
+                    float: left;
+                    margin-top: 30px;
+                    background-color: white;
+                }
+
+        #footer .com_logo {
+            width: 250px;
+            height: 200px;
+            line-height: 200px;
+        }
+
+        #footer .com_tel {
+            width: 500px;
+            height: 200px;
+            line-height: 200px;
+        }
+
+        #footer .com_info {
+            width: 250px;
+            height: 200px;
+            line-height: 200px;
+        }
+
+        #footer .copylight {
+            background-color: black;
+            color: white;
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            clear: both;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="gnb">
+            <ul>
+                <li><a href="#" alt="">Login</a></li>
+                <li><a href="#" alt="">Join Us</a></li>
+                <li><a href="#" alt="">Wish List</a></li>
+                <li><a href="#" alt="">Cart</a></li>
+                <li><a href="#" alt="">Order</a></li>
+                <li><a href="#" alt="">Mypage</a></li>
+                <li><a href="#" alt="">Notice</a></li>
+                <li><a href="#" alt="">QnA</a></li>
+                <li><a href="#" alt="">Review</a></li>
+                <li><a href="#" alt="">Favorite</a></li>
+            </ul>
+        </div>
+        <div id="logo">logo</div>
+        <div id="hit_menu">
+            <ul>
+                <li><a href="#">hit4</a></li>
+                <li><a href="#">hit3</a></li>
+                <li><a href="#">hit2</a></li>
+                <li><a href="#">hit1</a></li>
+            </ul>
+        </div>
+        <div id="lnb">
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+                <li><a href="#">menu6</a></li>
+                <li><a href="#">menu7</a></li>
+                <li><a href="#">menu8</a></li>
+            </ul>
+        </div>
+    </header>
+    <content>
+        <div id="section1">
+            <div class="slide">
+                slide banner
+            </div>
+            <div class="side">
+                side banner
+            </div>
+        </div>
+        <div id="section2">
+            <div class="type1">
+                <ul>
+                    <li><a href="#">picture1</a></li>
+                    <li><a href="#">picture2</a></li>
+                    <li><a href="#">picture3</a></li>
+                    <li><a href="#">picture4</a></li>
+                </ul>
+            </div>
+            <div class="type2">
+                <ul>
+                    <li>md_picture1</li>
+                    <li>md_picture2</li>
+                    <li>md_picture3</li>
+                    <li>md_picture4</li>
+                </ul>
+            </div>
+        </div>
+    </content>
+    <footer>
+        <div id="footer">
+            <div class="com_logo">회사로고</div>
+            <div class="com_tel">회사연락처</div>
+            <div class="com_info">회사소개</div>
+            <div class="copylight">copylight</div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,526 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>NAVER</title>
+    <style>
+        *{
+            font-family: Cambria;
+            
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        ul li{
+            list-style: none;
+        }
+        header{
+            width: 1300px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 250px;
+        }
+        #header_link{
+            float: right;
+            font-size: 0.9em;
+            height: 30px;
+            line-height: 30px;
+        }
+        #header_link div:nth-child(1){
+            float: left;
+            text-align: center;
+            margin-right: 10px;
+          
+        }
+         #header_link div:nth-child(1) img{
+            width:30px; 
+            float:right;
+        }
+        #header_link div:nth-child(2){
+            width: 250px;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            color: #808080;
+        }
+        #header_link div:nth-child(2) ul{
+            margin-top:0;
+            width: 300px;
+        }
+        #header_link div:nth-child(2) ul li {
+            height: 30px;
+            line-height: 30px;
+        }
+        #header_link div:nth-child(2) ul li:nth-child(1) {
+            width: 120px;
+            float: left;
+            border-left: 1px solid #808080;
+            text-align:center;
+           
+        }
+        #header_link div:nth-child(2) li:nth-child(2) {
+            float: left;
+            width: 120px;
+        }
+        #header_search{
+            margin: 50px auto;
+            padding: 10px;
+            overflow: hidden;
+        }
+        #logo {
+            float: left;
+            width: 360px;
+            height: 200px;
+            line-height: 200px;
+          
+        }
+        #search{
+            float: left;
+            margin-left: 0;
+         
+        }
+        #search #window{
+            float: left;
+            width: 500px; height: 70px;
+            border: 2.5px solid green;
+            margin: 40px 0;
+            border-radius: 1px 0 0 1px;
+            font-size: 30px;
+            box-sizing: border-box;
+            
+        }
+        #header_search #search input:focus{
+            border-bottom: 5px solid #808080;
+            
+            padding: 5px;
+        }
+        #search #button{
+            float: left;
+            width: 100px; height: 70px;
+            line-height: 60px;
+            background-color: green;
+            margin: 40px 0;
+            border: 2.5px solid green;
+            border-radius: 0 1px 1px 0;
+            box-sizing: border-box;
+            font-size: 1.8em;
+            color: white;
+        }
+        #nav{
+            height: 80px;
+            width: 1300px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        #nav div{
+            height: 80px;
+            line-height: 80px;
+        }
+        #nav div:nth-child(1) {
+            float: left;
+            width: 1000px;
+
+        }
+        #nav ul{
+            margin: 0;
+        }
+        #nav li{
+            font-weight: bold;
+            float: left;
+            font-size: 1.3em;
+            margin-right: 15px;
+           
+        }
+        #nav div:nth-child(2){
+            float: left;
+            width: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #nav div:nth-child(3){
+            float: left;
+            width: 200px;
+            text-align: center;
+        }
+        #wrap{
+            margin: 0 auto;
+            overflow: hidden;
+            width: 1300px;
+        }
+        #left {
+            width: 900px;
+            float: left;
+            margin: 0 auto;
+        }
+        #left div{
+            width: 830px;
+            border: 1px solid #808080;
+            margin: 5px;
+            padding: 5px;
+        }
+        #bigAd{
+            height: 200px;
+            
+        }
+        #news{
+            height: 50px;
+            
+        }
+        #newsstand .news_com tr{
+            margin: 0;
+        }
+        #newsstand .news_com th{
+            border: 1px solid #808080;
+            width: 130px; height: 60px;
+            margin: 0px;       
+        }
+        #left #theme{
+            border: none;
+        }
+        #theme div{
+            width: 810px;
+            padding: 0;
+            margin: 10px auto;
+            height: 200px;
+        }
+        #theme .the_menu{
+            width: 830px;
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 0;
+        }
+        #theme ul li{
+            display: inline-block;
+            float: left;
+            border: 1px solid #808080;
+            width: 102px; height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-left: none;
+        }
+        #theme ul li:first-child{
+            border-left: 1px solid #808080;
+        }
+        #theme div:nth-child(3){
+            height: 400px;
+        }
+        #theme div:nth-child(7){
+            height: 400px;
+        }
+        #right{
+            width:380px;
+            margin: 0 auto;
+            
+            float: left;
+        }
+        #right div{
+            width: 370px;
+            text-align: center;
+            border: 1px solid #808080;
+            padding: 5px;
+            margin: 5px;
+        }
+        #right #log_in{
+            height:200px;            
+            line-height: 200px;
+        }
+        #weather{
+            height: 50px;
+        }
+        #banner{
+            height: 250px;
+        }
+        #shopping{
+            border: none;
+        }
+        #shopping p{
+            text-align: left;
+            margin: 0;
+        }
+        #shopping ul{
+            overflow: hidden;
+            margin: 0;
+            text-align: left;
+            border: 1px solid #808080;
+            padding: 1px;
+            height: 70px;
+        }
+        #shopping ul li{
+            float: left;
+            display: inline-block;
+            width: 55px;
+            font-size: 0.5em;
+            margin-top:10px;
+            text-align: left;
+          
+        }
+        #shopping ul li:nth-child(1) {
+            width: 50px;
+            font-weight: bold;
+            margin-left:10px; 
+            margin-top: 10px;
+        }
+        #shopping ul li:nth-child(4) {
+            width: 50px;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        #shopping ul li:nth-child(6){
+            width: 70px;
+            font-weight: bold;
+            
+        }
+        #shopping ul li:nth-child(7) {
+            width: 70px;
+            
+            margin-left: 10px;
+        }
+        #shopping ul li:nth-child(8) {
+            width: 40px;
+        }
+        #shopping ul li:nth-child(9) {
+            width: 50px;
+            font-weight: bold;
+            
+        }
+        #shopping ul li:nth-child(10) {
+            width: 50px;
+            
+            margin-left: 5px;
+        }
+        #shopping ul li:nth-child(11) {
+            width: 70px;
+           
+        }
+        #shopping .adver{
+            width:360px;
+            
+          
+        }
+        #right #shopping_ad{
+            border: 1px solid #808080;
+            padding: 0;
+            margin: 0;
+            width: 366px;
+            border-top: none;
+        }
+        #shopping .page{
+            text-align: right;
+            height: 60px;
+            line-height: 60px;
+            font-size: 1.5em;
+        }
+        #shopping .adver tr{
+            height: 200px;
+            line-height: 200px;
+
+        }
+        #shopping .adver tr th{
+            border: 1px solid #808080;
+        }
+        #shopping #play{
+            border: none;
+            width: 360px;
+            
+            
+        }
+        #shopping #play ul{
+            border: none;
+            overflow: hidden;
+            height: 360px;
+            padding: 0;
+            margin: 0;
+
+        }
+        #shopping #play ul li:nth-child(1){
+            width: 350px;
+            height: 100px;
+            margin: 10px 0;
+            padding: 0;
+            border: 1px solid #808080;
+        }
+        #shopping #play ul li:nth-child(2){
+            width: 350px;
+            height: 100px;
+            
+            border: 1px solid #808080;
+        }
+        #shopping #play ul li:nth-child(3){
+            width: 350px;
+            height: 100px;
+            
+            border: 1px solid #808080;
+        }
+        #footer{
+            padding: 0;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 2.0em;
+            font-weight: bold;
+            border-top: 1px solid #0026ff;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header_link">
+            <div>
+                <a href="#">네이버를 시작페이지로<img src="http://shopping.phinf.naver.net/main_1101456/11014565197.20180627030314.jpg" /></a>
+            </div>
+            <div>
+                <ul>
+                    <li>쥬니어네이버</li>
+                    <li>해피빈</li>
+                </ul>
+            </div>
+        </div>
+        <div id="header_search">
+            <div id="logo">
+                <p><a href="#"><img src="http://blogfiles.naver.net/20151027_96/ytuio7942_1445954387734xTg3b_JPEG/11_01.jpg" width="400" height="100" /></a></p>
+            </div>
+            <div id="search">
+                <input type="text" id="window"/>
+                <button type="submit" id="button"><span class="txt_se">search</span></button>
+            </div>
+        </div>
+    </header><hr />
+    <div id="nav">
+        <div>
+            <ul>
+                <li>메일</li>
+                <li>카페</li>
+                <li>블로그</li>
+                <li>지식iN</li>
+                <li>쇼핑</li>
+                <li>Pay</li>
+                <li>TV</li>
+                <li>사전</li>
+                <li>뉴스</li>
+                <li>증권</li>
+                <li>부동산</li>
+                <li>지도</li>
+                <li>영화</li>
+                <li>뮤직</li>
+                <li>책</li>
+                <li>웹툰</li>
+            </ul>
+        </div>
+        <div>
+            더보기 v
+        </div>
+        <div>
+            급상승검색어 v
+        </div>
+    </div><hr />
+    <div id="wrap">
+        <div id="left">
+            <div id="bigAd">
+                빅 광고
+            </div>
+            <div id="news">뉴스 제목</div>
+            <div id="newsstand">
+                <p>뉴스스탠드</p>
+                <table class="news_com">
+                    <tr>
+                        <th>한국경제tv</th>
+                        <th>뉴스타파</th>
+                        <th>스포츠동아</th>
+                        <th>머니투데이</th>
+                        <th>디지털타임스</th>
+                        <th>JTBC</th>
+                    </tr>
+                    <tr>
+                        <th>뉴데일리</th>
+                        <th>OSEN</th>
+                        <th>동아일보</th>
+                        <th>노컷뉴스</th>
+                        <th>코리아해럴드</th>
+                        <th>KBSWORLD</th>
+                    </tr>
+                    <tr>
+                        <th>뉴스13</th>
+                        <th>뉴스14</th>
+                        <th>뉴스15</th>
+                        <th>뉴스16</th>
+                        <th>뉴스17</th>
+                        <th>뉴스18</th>
+                    </tr>
+                    <tr>
+                        <th>뉴스19</th>
+                        <th>뉴스20</th>
+                        <th>뉴스21</th>
+                        <th>뉴스22</th>
+                        <th>뉴스23</th>
+                        <th>뉴스24</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="theme">
+                <p>오늘 읽을만한 글</p>
+                <ul class="the_menu">
+                    <li>job&</li>
+                    <li>테크</li>
+                    <li>여행+</li>
+                    <li>과학</li>
+                    <li>리빙</li>
+                    <li>건강</li>
+                    <li>비즈니스</li>
+                    <li>연애.결혼</li>
+                </ul>
+                <div>내용1</div><hr />
+                <div>내용2</div><hr />
+                <div>내용3</div><hr />
+                <div>내용4</div><hr />
+            </div>
+        </div>
+        <div id="right">
+            <div id="log_in">
+                로그인
+            </div>
+            <div id="weather">날씨</div>
+            <div id="banner">배너</div>
+            <div id="shopping"><p>쇼핑</p>
+                <ul class="mall">
+                    <li>G마켓</li>
+                    <li>옥션</li>
+                    <li>11번가</li>
+                    <li>위메프</li>
+                    <li>티몬</li>
+                    <li>이마트몰</li>
+                    <li>올리브영</li>
+                    <li>GS샵</li>
+                    <li>롯데i몰</li>
+                    <li>CJmall</li>
+                    <li>신세계몰</li>
+                    <li>롯데ON</li>
+                </ul>
+                <div id="shopping_ad">
+                    <p class="page">1/6</p>
+                    <table class="adver">
+                        <tr><th>광고</th><th>광고</th><th>광고</th></tr>
+                        <tr><th>광고</th><th>광고</th><th>광고</th></tr>
+                        <tr><th>광고</th><th>광고</th><th>광고</th></tr>
+                    </table>
+                </div>
+                <div id="play">
+                    <p>PLAY.FUN</p>
+                    
+                    <ul>
+                        <li>menu1</li>
+                        <li>menu2</li>
+                        <li>menu3</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="footer">
+        <p>footer</p>
+    </div>
+</body>
+</html>
