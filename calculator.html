@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>계산기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 2px;
+        }
+        li{
+            list-style:none;
+        }        
+        header{
+            border: 5px solid #000000;
+            margin: 0 auto;
+            width: 600px;   height: 100px;
+            line-height: 120px;
+            text-align: center;
+        }
+        header input{
+            width: 500px;   height: 40px;
+            margin: 0 auto;
+            text-align: right;
+            font-size: 2.0em;
+        }
+        #cBody {
+            border: 5px solid #000000;
+            margin: 0 auto;
+            width: 600px;
+            height: 660px;
+            text-align: center;
+        }
+        #cBody #nav{
+            width:580px;    height: 60px;
+            margin: 5px auto;
+        }
+        #cBody #nav ul{
+            overflow: hidden;
+            width:570px;    height: 200px;
+            margin: 0 auto;
+
+        }
+        #cBody #nav ul li{
+            border: 2px solid #000000;
+            text-align: center;
+            width: 150px;   height: 40px;
+            padding: 5px;
+            line-height: 40px;
+            font-size: 2.0em;
+            font: bold;
+        }
+        #cBody #nav ul li:first-child{
+            background-color: palevioletred;
+            float: left;
+            margin-left: 1px;
+        }
+        #cBody #nav ul li:first-child:hover{
+            background-color: #ff0000;
+        }
+        
+        #cBody #nav ul li:last-child{
+            background-color: #808080;
+            float: right;
+            margin-right: 1px;            
+        }
+        #cBody #nav ul li:last-child:hover{
+            background-color: #ff6a00;
+        }
+
+        #cBody #pad {
+            width: 580px;
+            height: 550px;
+            border: 1px solid;            
+            margin: 0 auto;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        #cBody #pad #num{
+            float: left;
+            width: 350px;   height: 580px;
+            
+        }
+        #cBody #pad #num tr th{
+            width: 90px;   height: 90px;
+            border: 1px solid;
+            float: left;
+            line-height: 90px;
+            background-color: #808080;
+            padding:5px;
+            margin-right:11px;
+            font-size: 2.2em;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        #cBody #pad #num tr th:hover{
+            background-color: #ff6a00;
+        }
+        #cBody #pad #num tr:last-child th:last-child {
+            line-height: 76px;
+        }
+        #cBody #pad #sign{
+            float:left;
+            width:225px;    height: 580px;
+
+        }
+        #cBody #pad #sign #xy{
+            width: 225px;   height: 110px;            
+            overflow: hidden;
+        }
+        #cBody #pad #sign #xy h1 {
+            width: 90px;
+            height: 90px;
+            border: 1px solid;
+            float: left;
+            line-height: 90px;
+            background-color: #808080;
+            padding: 5px;
+            margin-right: 10px;
+            font-size: 2.2em;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        #cBody #pad #sign #xy h1:hover {
+            background-color:#ff6a00;
+        }
+        #cBody #pad #sign #p_m_e{
+            width: 225px;       height: 460px;
+            text-align: center;            
+        }
+        #cBody #pad #sign #p_m_e p {
+            width: 210px;
+            height: 90px;
+            border: 1px solid;
+            float: left;
+            line-height: 90px;
+            background-color: #808080;
+            padding: 5px;
+            margin-top: 41px;
+            font-size: 3em;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        #cBody #pad #sign #p_m_e p:first-child{
+            margin-top:29px;
+        }
+        #cBody #pad #sign #p_m_e p:hover{
+            background-color: #ff6a00;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <input id="calOut" type="text" title="cal" value="0" onkeyup="changeVar(this.value)" />
+    </header>
+    <div id="cBody">
+        <div id="nav">
+            <ul>
+                <li onclick="reset()">On/C</li>
+                <li onclick="del()">del</li>
+            </ul>
+        </div>
+        <div id ="pad">
+            <table id="num">
+                <tr>
+                    <th onclick="add('7')">7</th>
+                    <th onclick="add('8')">8</th>
+                    <th onclick="add('9')">9</th>
+                </tr>
+                <tr>
+                    <th onclick="add('4')">4</th>
+                    <th onclick="add('5')">5</th>
+                    <th onclick="add('6')">6</th>
+                </tr>
+                <tr>
+                    <th onclick="add('1')">1</th>
+                    <th onclick="add('2')">2</th>
+                    <th onclick="add('3')">3</th>
+                </tr>
+                <tr>
+                    <th onclick="add('0')">0</th>
+                    <th onclick="add('00')">00</th>
+                    <th onclick="add('.')">.</th>
+                </tr>
+            </table>
+            <div id="sign">
+                <div id="xy">
+                    <h1 class="x" onclick="add('*')">X</h1>
+                    <h1 class="y" onclick="add('/')">/</h1>
+                </div>
+                <div id="p_m_e">
+                    <p class="plus" onclick="add('+')">+</p>
+                    <p class="minus" onclick="add('-')">-</p>
+                    <p class="equl" onclick="cal()">=</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var click = false;
+        all = "";
+        function add(char) {
+            
+            if (click == false) {
+                if (isNaN(char) == true) { }
+                else {
+                    all += char;
+                    document.getElementById('calOut').value = all;
+                }
+            }
+            else {
+                all += char;
+                document.getElementById('calOut').value = all;
+            }
+
+            if (isNaN(char) == true) {
+                click = false;
+            } else {
+                click = true;
+            }
+        }
+        function cal() {
+            var display = document.getElementById('calOut');
+            var result = eval(display.value);
+            document.getElementById('calOut').value = result;
+            all = result;
+        }
+        function reset() {
+            all = "";
+            document.getElementById('calOut').value = "0";
+        }
+        function del() {
+            var display = document.getElementById('calOut');
+            display.value = display.value.substring(0, display.value.length - 1);           //요거 잘 모르겠슴
+            all = display.value.toString();                                                 //toString / subString 공부 필요.
+            document.getElementById('calOut') = all;
+        }
+    </script>
+</body>
+</html>
