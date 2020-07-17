@@ -159,7 +159,7 @@
         <div id="nav">
             <ul>
                 <li onclick="reset()">On/C</li>
-                <li onclick="del()">del</li>
+                <li id="del" onclick="del()">del</li>
             </ul>
         </div>
         <div id ="pad">
@@ -199,12 +199,17 @@
         </div>
     </div>
     <script>
-        var click = false;
+        
+        var click = false;          
         all = "";
+     
+
         function add(char) {
             
             if (click == false) {
-                if (isNaN(char) == true) { }
+                if (isNaN(char) == true) {
+                    
+                }
                 else {
                     all += char;
                     document.getElementById('calOut').value = all;
@@ -214,10 +219,10 @@
                 all += char;
                 document.getElementById('calOut').value = all;
             }
-
             if (isNaN(char) == true) {
                 click = false;
-            } else {
+            }
+            else {
                 click = true;
             }
         }
@@ -235,7 +240,8 @@
             var display = document.getElementById('calOut');
             display.value = display.value.substring(0, display.value.length - 1);           //요거 잘 모르겠슴
             all = display.value.toString();                                                 //toString / subString 공부 필요.
-            document.getElementById('calOut') = all;
+            display = all;
+            click = true;
         }
     </script>
 </body>
